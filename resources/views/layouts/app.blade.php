@@ -28,7 +28,7 @@
         <nav id="navi" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img class="navbar-logo" src="images/logo.png"></img>
+                    <img class="navbar-logo" src="../../images/logo.png"></img>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -55,8 +55,8 @@
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                         </li>
                         <li class="nav-item">
-                        <button <a id="tech">Vous êtes techniciens ?</a></button>
-                    </li>
+                            <a id="tech"> <button>Vous êtes techniciens ?</button></a>
+                        </li>
                         @endif
                         @else
                         <li class="nav-item dropdown">
@@ -65,14 +65,17 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('admin.users.index') }}">Dasboard</a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Deconnexion') }}
+                                    Deconnexion
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
+
                             </div>
                         </li>
                         @endguest
