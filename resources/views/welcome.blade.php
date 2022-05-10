@@ -30,5 +30,7 @@
 <!-- <img class="banni" src="images/bannière.jpg" alt="bannière"> -->
         
         @endsection
+
+        
     </body>
 </html>
