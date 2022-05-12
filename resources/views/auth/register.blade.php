@@ -13,11 +13,11 @@
 
                         <div class="row g-3">
                             <div class="col">
-                                <label for="">Nom:</label>
-                                <input id="name" type="text" placeholder="Nom..." class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <label for="">Prenom:</label>
+                                <input id="name" type="text" placeholder="Nom..." class="form-control " name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                             </div>
                             <div class="col">
-                                <label for="">Prenom:</label>
+                                <label for="">Nom:</label>
                                 <input type="text" name="prenom" class="form-control" placeholder="Prenom..." aria-label="Prenom">
                             </div>
                         </div>
@@ -77,7 +77,7 @@
         font-size: 48px;
     }
 
-    .col{
+    .col {
         font-size: 16px;
     }
 </style>

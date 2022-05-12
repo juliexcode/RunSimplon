@@ -28,13 +28,13 @@
                 </div>
                 <div class="modal-body">
 
-                    <form method="POST" action="{{route('admin.techniciens.store')}}">
+                    <form method="POST" action="{{ route('admin.users.store') }}">
                         @csrf
                         <div class="mb-3">
-                            <label class="col-form-label">Nom</label>
-                            <input type="text" name="nom" class="form-control" required value="{{ old('nom') }}" id="nom">
+                            <label class="col-form-label">Prenom</label>
+                            <input type="text" name="name" class="form-control" required value="{{ old('name') }}" id="name">
                             <div class="mb-3">
-                                <label class="col-form-label">Prenom</label>
+                                <label class="col-form-label">Nom</label>
                                 <input type="text" name="prenom" class="form-control" required value="{{ old('prenom') }}" id="prenom">
                             </div>
                             <div class="mb-3">
@@ -43,7 +43,7 @@
                             </div>
                             <div class="mb-3">
                                 <label class="col-form-label">N° de telephone</label>
-                                <input type="number" name="telephone" class="form-control" required value="{{ old('telephone') }}" id="telephone">
+                                <input type="number" name="numero" class="form-control" required value="{{ old('numero') }}" id="numero">
                             </div>
                             <div class="mb-3">
                                 <label class="col-form-label">Mot de passe</label>
