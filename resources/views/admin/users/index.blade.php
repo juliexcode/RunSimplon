@@ -3,6 +3,8 @@
 
 @section('content')
 <div class="container">
+
+
     @foreach($users as $user)
     <div>
 
@@ -30,26 +32,26 @@
                         @csrf
                         <div class="mb-3">
                             <label class="col-form-label">Nom</label>
-                            <input type="text" name="nom" class="form-control" value="{{ old('nom') }}" id="nom">
+                            <input type="text" name="nom" class="form-control" required value="{{ old('nom') }}" id="nom">
                             <div class="mb-3">
                                 <label class="col-form-label">Prenom</label>
-                                <input type="text" name="prenom" class="form-control" value="{{ old('prenom') }}" id="prenom">
+                                <input type="text" name="prenom" class="form-control" required value="{{ old('prenom') }}" id="prenom">
                             </div>
                             <div class="mb-3">
                                 <label class="col-form-label">E-mail</label>
-                                <input type="text" name="email" class="form-control" value="{{ old('email') }}" id="email">
+                                <input type="text" name="email" class="form-control" required value="{{ old('email') }}" id="email">
                             </div>
                             <div class="mb-3">
                                 <label class="col-form-label">N° de telephone</label>
-                                <input type="number" name="telephone" class="form-control" value="{{ old('telephone') }}" id="telephone">
+                                <input type="number" name="telephone" class="form-control" required value="{{ old('telephone') }}" id="telephone">
                             </div>
                             <div class="mb-3">
                                 <label class="col-form-label">Mot de passe</label>
-                                <input type="password" name="password" class="form-control" value="{{ old('password') }}" id="passe">
+                                <input type="password" name="password" class="form-control" required value="{{ old('password') }}" id="passe">
                             </div>
                             <div class="mb-3">
                                 <label class="col-form-label">Confirmation de mot de passe</label>
-                                <input type="password" name="confirm" class="form-control" value="{{ old('confirm') }}" id="confirm">
+                                <input type="password" name="confirm" class="form-control" required value="{{ old('confirm') }}" id="confirm">
                             </div>
 
                         </div>

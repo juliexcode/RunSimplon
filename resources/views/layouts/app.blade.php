@@ -54,7 +54,7 @@
                             <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
                         </li>
                         <li class="nav-item">
-                            <a id="tech"> <button>Vous êtes techniciens ?</button></a>
+                            <a id="tech" href="{{route('admin.techniciens.index')}}"> <button>Vous êtes techniciens ?</button></a>
                         </li>
                         @endif
                         @else

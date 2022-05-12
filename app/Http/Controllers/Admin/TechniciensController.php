@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Techniciens;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Auth\SessionGuard;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class TechniciensController extends Controller
 {
@@ -15,7 +19,7 @@ class TechniciensController extends Controller
      */
     public function index()
     {
-        //
+        return view('auth.log');
     }
 
     /**
@@ -23,9 +27,29 @@ class TechniciensController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+
+    public function getConnect()
     {
-        //
+        request()->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:4'],
+        ]);
+        $technicien = array(
+            'email' => request('email'),
+            'password' => request('password')
+        );
+
+
+        if (auth()->attempt($technicien)) {
+            return Redirect()->intended('admin.connect');
+        } else return view('auth.log');
+    }
+
+    public function online()
+    {
+        if (auth()->check()) {
+            return view('hometech');
+        } else return view('auth.log')->with('message', 'Erreur LOG');
     }
 
     /**
@@ -34,7 +58,7 @@ class TechniciensController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
 
         request()->validate([
@@ -45,7 +69,15 @@ class TechniciensController extends Controller
             'password' => ['required', 'min:4'],
             'confirm' => ['required', 'same:password']
         ]);
-        echo "rempli avec succes";
+        $technicien = new Techniciens;
+        $technicien->nom = request('nom');
+        $technicien->prenom = request('prenom');
+        $technicien->telephone = request('telephone');
+        $technicien->email = request('email');
+        $technicien->password = hash::make(request('password'));
+        $technicien->save();
+
+        return redirect()->back();
     }
 
     /**
