@@ -25,9 +25,13 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('users', 'UsersController');
     Route::resource('techniciens', 'TechniciensController');
     Route::post('enligne', 'TechniciensController@getConnect')->name('enligne');
     Route::get('connect', 'TechniciensController@online')->name('connect');
 });
+
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
+
