@@ -28,8 +28,11 @@
                         <a class="nav-link active" href="#">Inscription</a>
                     </li>
                     <li class="nav-item">
-                        <button <a id="tech">Vous êtes techniciens ?</a></button>
+                        <a class="nav-link active" href="#">Nous contactez</a>
                     </li>
+                    <!-- <li class="nav-item">
+                        <button <a id="tech">Vous êtes techniciens ?</a></button>
+                    </li> -->
                     <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                             Dropdown
@@ -54,10 +57,10 @@
             </div>
         </div>
     </nav>
+    
     <div class="container">
         @yield('content')
     </div>
-
     <style>
         body {
             font-family: 'Oswald', sans-serif;
@@ -93,6 +96,7 @@
 
         }
     </style>
+
 
 </body>
 

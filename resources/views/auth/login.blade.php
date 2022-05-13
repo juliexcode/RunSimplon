@@ -2,17 +2,26 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
+    <div class="row ">
         <div class="col-md-8">
+<<<<<<< HEAD
             <div class="card">
                 <div class="card-header">BIENVENUE</div>
+=======
+            <div id="cont" class="card">
+                <div class="card-header">{{ __('Bienvenue') }}</div>
+>>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
 
                 <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
                         <div class="row mb-3">
+<<<<<<< HEAD
                             <label for="email" class="col-md-4 col-form-label text-md-end">ADRESSE EMAIL:</label>
+=======
+                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Adresse mail') }}</label>
+>>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
@@ -26,7 +35,11 @@
                         </div>
 
                         <div class="row mb-3">
+<<<<<<< HEAD
                             <label for="password" class="col-md-4 col-form-label text-md-end">MOT DE PASSE</label>
+=======
+                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Mot de passe') }}</label>
+>>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -53,36 +66,66 @@
 
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
+<<<<<<< HEAD
                                 <button type="submit" id="btncon" class="btn btn-primary">
+=======
+                                <button id="btncon" type="submit" class="btn btn-primary">
+>>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
                                     Se connecter
                                 </button>
 
                                 @if (Route::has('password.request'))
+<<<<<<< HEAD
                                 <a class="btn btn-link" href="{{ route('password.request') }}">
                                     Mot de passe oublié?
+=======
+                                <a id="mot" class="btn btn-link" href="{{ route('password.request') }}">
+                                    Mot de passe oublier
+>>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
                                 </a>
                                 @endif
                             </div>
                         </div>
+                        <p id="ins">vous n'êtes pas inscrit ? <a href="{{ route('register') }}">S'inscrire</a></p>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<div style="height: 140px;">
+    
+</div>
 @endsection
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
 <style>
     .card-header {
         text-align: center;
         font-size: 48px;
     }
 
+<<<<<<< HEAD
 
 
 
     @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap%27');
 
+=======
+    #cont {
+        margin-left: 300px;
+    }
+
+    #ins {
+        margin-left: 200px;
+        margin-top: 20px;
+    }
+
+    @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+>>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
 
     #btncon {
         margin: 0;
@@ -142,4 +185,11 @@
     #btncon:hover {
         transform: translateZ(-25px) rotateX(-90deg);
     }
+<<<<<<< HEAD
+=======
+
+#mot{
+    margin-left: 40px;
+}
+>>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
 </style>

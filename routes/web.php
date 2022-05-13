@@ -26,6 +26,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+
 Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('users', 'UsersController');
     Route::get('users/', function () {
@@ -35,3 +36,6 @@ Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')-
     Route::post('users/', 'UsersController@entReg')->name('entreprise.log');
     Route::get('users/index', 'UsersController@index')->name('users.index');
 });
+
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
+
