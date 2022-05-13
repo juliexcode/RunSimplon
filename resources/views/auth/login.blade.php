@@ -4,192 +4,167 @@
 <div class="container">
     <div class="row ">
         <div class="col-md-8">
-<<<<<<< HEAD
             <div class="card">
                 <div class="card-header">BIENVENUE</div>
-=======
-            <div id="cont" class="card">
-                <div class="card-header">{{ __('Bienvenue') }}</div>
->>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
+                <div id="cont" class="card">
+                    <div class="card-header">{{ __('Bienvenue') }}</div>
 
-                        <div class="row mb-3">
-<<<<<<< HEAD
-                            <label for="email" class="col-md-4 col-form-label text-md-end">ADRESSE EMAIL:</label>
-=======
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Adresse mail') }}</label>
->>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                    <div class="card-body">
+                        <form method="POST" action="{{ route('login') }}">
+                            @csrf
 
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
+                            <div class="row mb-3">
+                                <label for="email" class="col-md-4 col-form-label text-md-end">ADRESSE EMAIL:</label>
 
-                        <div class="row mb-3">
-<<<<<<< HEAD
-                            <label for="password" class="col-md-4 col-form-label text-md-end">MOT DE PASSE</label>
-=======
-                            <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Mot de passe') }}</label>
->>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
+                                <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Adresse mail') }}</label>
 
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
+                                <div class="col-md-6">
+                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                        <div class="row mb-3">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        Se souvenir de moi
-                                    </label>
+                                    @error('email')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-8 offset-md-4">
-<<<<<<< HEAD
-                                <button type="submit" id="btncon" class="btn btn-primary">
-=======
-                                <button id="btncon" type="submit" class="btn btn-primary">
->>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
-                                    Se connecter
-                                </button>
+                            <div class="row mb-3">
 
-                                @if (Route::has('password.request'))
-<<<<<<< HEAD
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    Mot de passe oublié?
-=======
-                                <a id="mot" class="btn btn-link" href="{{ route('password.request') }}">
-                                    Mot de passe oublier
->>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
-                                </a>
-                                @endif
+                                <label for="password" class="col-md-4 col-form-label text-md-end">MOT DE PASSE</label>
+
+
+                                <div class="col-md-6">
+                                    <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+
+                                    @error('password')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                    @enderror
+                                </div>
                             </div>
-                        </div>
-                        <p id="ins">vous n'êtes pas inscrit ? <a href="{{ route('register') }}">S'inscrire</a></p>
-                    </form>
+
+                            <div class="row mb-3">
+                                <div class="col-md-6 offset-md-4">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+
+                                        <label class="form-check-label" for="remember">
+                                            Se souvenir de moi
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row mb-0">
+                                <div class="col-md-8 offset-md-4">
+                                    <<<<<<< HEAD <button type="submit" id="btncon" class="btn btn-primary">
+                                        =======
+                                        <button id="btncon" type="submit" class="btn btn-primary">
+                                            >>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
+                                            Se connecter
+                                        </button>
+
+                                        @if (Route::has('password.request'))
+                                        <<<<<<< HEAD <a class="btn btn-link" href="{{ route('password.request') }}">
+                                            Mot de passe oublié?
+                                            =======
+                                            <a id="mot" class="btn btn-link" href="{{ route('password.request') }}">
+                                                Mot de passe oublier
+                                                >>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
+                                            </a>
+                                            @endif
+                                </div>
+                            </div>
+                            <p id="ins">vous n'êtes pas inscrit ? <a href="{{ route('register') }}">S'inscrire</a></p>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<div style="height: 140px;">
-    
-</div>
-@endsection
+    <div style="height: 140px;">
 
-<<<<<<< HEAD
-=======
+    </div>
+    @endsection
 
->>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
-<style>
-    .card-header {
-        text-align: center;
-        font-size: 48px;
-    }
 
-<<<<<<< HEAD
+    <style>
+        .card-header {
+            text-align: center;
+            font-size: 48px;
+        }
 
 
 
-    @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap%27');
 
-=======
-    #cont {
-        margin-left: 300px;
-    }
+        #ins {
+            margin-left: 200px;
+            margin-top: 20px;
+        }
 
-    #ins {
-        margin-left: 200px;
-        margin-top: 20px;
-    }
+        @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 
-    @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
->>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
+        #btncon {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background: #2B55CD;
+        }
 
-    #btncon {
-        margin: 0;
-        padding: 0;
-        display: flex;
-        height: 100vh;
-        align-items: center;
-        justify-content: center;
-        background: #2B55CD;
-    }
+        #btncon {
+            position: relative;
+            display: inline-flex;
+            width: 180px;
+            height: 55px;
+            margin: 0 15px;
+            perspective: 1000px;
+        }
 
-    #btncon {
-        position: relative;
-        display: inline-flex;
-        width: 180px;
-        height: 55px;
-        margin: 0 15px;
-        perspective: 1000px;
-    }
+        #btncon {
+            font-size: 19px;
+            letter-spacing: 1px;
+            transform-style: preserve-3d;
+            transform: translateZ(-25px);
+            transition: transform .25s;
+            font-family: 'Montserrat', sans-serif;
 
-    #btncon {
-        font-size: 19px;
-        letter-spacing: 1px;
-        transform-style: preserve-3d;
-        transform: translateZ(-25px);
-        transition: transform .25s;
-        font-family: 'Montserrat', sans-serif;
+        }
 
-    }
+        #btncon:before,
+        #btncon:after {
+            position: absolute;
+            content: "Se connecter";
+            height: 55px;
+            width: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* border: 5px solid black; */
+            box-sizing: border-box;
+            border-radius: 5px;
+            background: #2B55CD;
+        }
 
-    #btncon:before,
-    #btncon:after {
-        position: absolute;
-        content: "Se connecter";
-        height: 55px;
-        width: 180px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        /* border: 5px solid black; */
-        box-sizing: border-box;
-        border-radius: 5px;
-        background: #2B55CD;
-    }
+        #btncon:before {
+            color: #fff;
+            background: #2B55CD;
+            transform: rotateY(0deg) translateZ(25px);
+        }
 
-    #btncon:before {
-        color: #fff;
-        background: #2B55CD;
-        transform: rotateY(0deg) translateZ(25px);
-    }
+        #btncon:after {
+            color: #000;
+            transform: rotateX(90deg) translateZ(25px);
+        }
 
-    #btncon:after {
-        color: #000;
-        transform: rotateX(90deg) translateZ(25px);
-    }
-
-    #btncon:hover {
-        transform: translateZ(-25px) rotateX(-90deg);
-    }
-<<<<<<< HEAD
-=======
-
-#mot{
-    margin-left: 40px;
-}
->>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
-</style>
+        #btncon:hover {
+            transform: translateZ(-25px) rotateX(-90deg);
+        }
+    </style>
