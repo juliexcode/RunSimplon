@@ -44,28 +44,25 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
-                        @if (Route::has('register'))
-                        <li class="nav-item">
-                            <a id="regis" class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
-                        </li>
-                        <!-- <li class="nav-item">
-                            <button <a >Vous êtes techniciens ?</a></button>
-                        </li> -->
-                        @endif
+
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}"><button class="tech">{{ __('Connexion') }}</button></a>
+                            <a class="nav-link" href="{{ route('login') }}">Connexion</a>
                         </li>
+                        @endif
 
+                        @if (Route::has('register'))
                         <li class="nav-item">
-                            <a id="tech" href="{{ route('admin.entreprise') }}"> <button>Vous êtes une entreprise?</button></a>
+                            <a class="nav-link" href="{{ route('register') }}">Inscription</a>
                         </li>
-
+                        <li class="nav-item">
+                            <a href="{{ route('admin.entreprise') }}"> <button id="tech">Vous êtes une entreprise?</button></a>
+                        </li>
 
                         @endif
 
-                        
+
                         @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -98,7 +95,7 @@
 
         @include('layouts.footer')
     </div>
-    
+
 
     <style>
         body {
@@ -115,9 +112,9 @@
             width: 300px;
         }
 
-        .tech {
-            width: 150px;
-            height: 35px;
+        #tech {
+            width: 180px;
+            height: 40px;
             border: none;
             color: white;
             background-color: rgba(43, 85, 205, 1);
@@ -128,14 +125,11 @@
             outline: none;
         }
 
-        .tech:hover {
+        #tech:hover {
             box-shadow: inset 300px 0 0 0 #81CC16;
             cursor: pointer;
             color: black;
 
-        }
-        #regis{
-            margin-top: 5px;
         }
     </style>
 
