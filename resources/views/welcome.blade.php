@@ -1,26 +1,75 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('content')
 
-    <title>Laravel</title>
-    <link rel="stylesheet" href="css/app.css">
+<img class="banniere" src="images/unknown.png"></img>
+<div class="container">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-
-    <style>
-        body {
-            font-family: 'Nunito', sans-serif;
-        }
-    </style>
-</head>
-
-<body class="antialiased">
-    @extends('layouts.app')
+</div>
+<br>
+<!-- <div class="main">
+    <h5 class="accroch">Ne vous préoccupez plus de vos pneus, TuMeGonfles est là pour vous !</h5>
+    <img class="roue" src="images/pneuGonflage.jpg" class="img-fluid" alt="Responsive image">
+    <p>Pourquoi vérifiez la pression des ses pneus est important ?</p>
 
 
+</div> -->
+
+<div class="container" style="display: inline-block;">
+ 
+        <div class="row flex-align-item-center">
+ 
+            <div class="col-lg-6">
+                <img src="images/pneuGonflage.jpg" class="img-fluid" alt="Responsive image">
+            </div>
+ 
+ 
+            <div class="col-lg-3">
+                <p>Pourquoi vérifiez la pression des ses pneus est important ?</p>
+            </div>
+ 
+            
+ 
+        </div>
+         
+    </div>
+
+
+
+
+@endsection
+
+
+
+<style>
+    .banniere {
+        width: 100%;
+        height: auto;
+        margin-top: -25px;
+        margin-bottom: -25px;
+
+
+    }
+
+    .accroch {
+        color: 2B55CD;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 36px;
+
+
+    }
+
+    .roue {
+        margin-top: 10px;
+        height: 298;
+        width: 262;
+        margin-left: 400px;
+
+    }
+    
+</style>
+
+
+
+<!-- auto-auto-tires-rubber-cold.jpg -->
