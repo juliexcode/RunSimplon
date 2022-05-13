@@ -50,17 +50,21 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">Connexion</a>
                         </li>
-                        @endif
 
+                        @endif
                         @if (Route::has('register'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('register') }}">Inscription</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{{ route('admin.entreprise') }}"> <button id="tech">Vous êtes une entreprise?</button></a>
-                        </li>
+
 
                         @endif
+
+
+                        <li class="nav-item">
+                            <a href="{{ route('admin.users.create') }}"> <button id="tech">Inscription</button></a>
+                        </li>
+
 
 
                         @else
@@ -113,7 +117,7 @@
         }
 
         #tech {
-            width: 180px;
+            width: 125px;
             height: 40px;
             border: none;
             color: white;
