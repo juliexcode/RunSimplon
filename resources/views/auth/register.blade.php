@@ -10,28 +10,18 @@
                 <div class="card-body">
                     <form method="POST" action="{{ route('register') }}">
                         @csrf
-<<<<<<< HEAD
 
-                        <div class="row g-3">
-                            <div class="col">
-                                <label for="">Prenom:</label>
-                                <input id="name" type="text" placeholder="Nom..." class="form-control " name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                            </div>
-                            <div class="col">
-                                <label for="">Nom:</label>
-                                <input type="text" name="prenom" class="form-control" placeholder="Prenom..." aria-label="Prenom">
-=======
                         <div class="container px-4">
                             <div class="row g-3">
                                 <div class="col">
-                                    <label for="">Nom:</label>
+                                    <label for="">Prenom:</label>
                                     <input id="name" type="text" placeholder="Nom..." class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
                                 </div>
                                 <div class="col">
-                                    <label for="">Prenom:</label>
+                                    <label for="">Nom:</label>
                                     <input type="text" name="prenom" class="form-control" placeholder="Prenom..." aria-label="Prenom">
                                 </div>
->>>>>>> 3454e12149067e2ecf2c147d0dbe7e7870c52f50
+
                             </div>
                         </div>
                         <div id="prems" class="container px-4">
@@ -122,7 +112,8 @@
         height: 100vh;
         align-items: center;
         justify-content: center;
-        background: #2B55CD;;
+        background: #2B55CD;
+        ;
     }
 
     #inscrire {
