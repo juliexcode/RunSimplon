@@ -29,13 +29,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('users', 'UsersController');
+
     Route::get('users/', function () {
         return view('registerEntreprise');
     })->name('entreprise');
 
-    Route::post('users/', 'UsersController@entReg')->name('entreprise.log');
-    Route::get('users/index', 'UsersController@index')->name('users.index');
+    Route::post('users/entreprise', 'UsersController@entReg')->name('entreprise.log');
+    Route::get('users', 'UsersController@index')->name('users.index');
 });
 
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
-
