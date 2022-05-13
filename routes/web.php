@@ -23,14 +23,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('users', 'UsersController');
-    Route::resource('techniciens', 'TechniciensController');
-    Route::post('enligne', 'TechniciensController@getConnect')->name('enligne');
-    Route::get('connect', 'TechniciensController@online')->name('connect');
+    Route::get('users/', function () {
+        return view('registerEntreprise');
+    })->name('entreprise');
+
+    Route::post('users/', 'UsersController@entReg')->name('entreprise.log');
+    Route::get('users/index', 'UsersController@index')->name('users.index');
 });
 
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');

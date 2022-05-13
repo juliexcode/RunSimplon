@@ -59,7 +59,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a id="tech" href="{{route('admin.techniciens.index')}}"> <button>Vous êtes techniciens ?</button></a>
+                            <a id="tech" href="{{ route('admin.entreprise') }}"> <button>Vous êtes une entreprise?</button></a>
                         </li>
 
 
