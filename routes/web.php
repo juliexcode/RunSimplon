@@ -4,7 +4,6 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\UsersController;
-use app\Http\Controllers\Admin\TechniciensController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,12 +28,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('users', 'UsersController');
-
-    Route::get('users/entreprise', function () {
-        return view('registerEntreprise');
-    })->name('entreprise');
-
-    Route::post('users/entreprise/log', 'UsersController@entReg')->name('entreprise.log');
+    Route::post('users', 'UsersController@entReg')->name('entreprise.log');
     Route::get('users', 'UsersController@index')->name('users.index');
 });
 

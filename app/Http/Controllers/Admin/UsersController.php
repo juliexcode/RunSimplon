@@ -11,7 +11,7 @@ class UsersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['entReg']);;
+        $this->middleware('auth')->except(['entReg', 'create']);;
     }
     /**
      * Display a listing of the resource.
@@ -31,7 +31,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('registerentreprise');
     }
 
     /**
@@ -62,6 +62,11 @@ class UsersController extends Controller
         return redirect()->back();
     }
 
+    public function inscrit()
+    {
+    }
+
+
 
     public function entReg()
     {
@@ -85,7 +90,7 @@ class UsersController extends Controller
         $user->password = hash::make(request('password'));
         $user->save();
 
-        return redirect()->back();
+        return view('auth.login');
     }
 
 
