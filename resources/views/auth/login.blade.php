@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 @section('content')
 <div class="container">
     <div class="row justify-content-center ">
@@ -44,7 +46,10 @@
                                 @enderror
                             </div>
                         </div>
-	@@ -45,29 +53,108 @@
+
+                        <div class="row mb-3">
+                            <div class="col-md-6 offset-md-4">
+                                <div class="form-check">
                                     <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
 
                                     <label class="form-check-label" for="remember">
@@ -85,11 +90,14 @@
             text-align: center;
             font-size: 48px;
         }
+
         #ins {
             margin-left: 200px;
             margin-top: 20px;
         }
+
         @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
         #btncon {
             margin: 0;
             padding: 0;
@@ -99,6 +107,7 @@
             justify-content: center;
             background: #2B55CD;
         }
+
         #btncon {
             position: relative;
             display: inline-flex;
@@ -107,6 +116,7 @@
             margin: 0 15px;
             perspective: 1000px;
         }
+
         #btncon {
             font-size: 19px;
             letter-spacing: 1px;
@@ -115,6 +125,7 @@
             transition: transform .25s;
             font-family: 'Montserrat', sans-serif;
         }
+
         #btncon:before,
         #btncon:after {
             position: absolute;
@@ -129,15 +140,18 @@
             border-radius: 5px;
             background: #2B55CD;
         }
+
         #btncon:before {
             color: #fff;
             background: #2B55CD;
             transform: rotateY(0deg) translateZ(25px);
         }
+
         #btncon:after {
             color: #000;
             transform: rotateX(90deg) translateZ(25px);
         }
+
         #btncon:hover {
             transform: translateZ(-25px) rotateX(-90deg);
         }
