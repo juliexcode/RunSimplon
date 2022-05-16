@@ -13,14 +13,15 @@
 
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
 
 <body>
@@ -28,7 +29,7 @@
         <nav id="navi" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img class="navbar-logo" src="images/logo.png"></img>
+                    <img class="navbar-logo" src="../../images/logo.png"></img>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -43,21 +44,29 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
+
                         @guest
                         @if (Route::has('login'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Connexion') }}</a>
+                            <a class="nav-link" href="{{ route('login') }}">Connexion</a>
                         </li>
-                        @endif
 
+                        @endif
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">{{ __('Inscription') }}</a>
+                            <a class="nav-link" href="{{ route('register') }}">Inscription</a>
                         </li>
-                        <li class="nav-item">
-                        <button <a id="tech">Vous êtes techniciens ?</a></button>
-                    </li>
+
+
                         @endif
+
+
+                        <li class="nav-item">
+                            <a href="{{ route('admin.users.create') }}"> <button id="tech">Inscription</button></a>
+                        </li>
+
+
+
                         @else
                         <li class="nav-item dropdown">
                             <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -65,14 +74,17 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('admin.users.index') }}">Dasboard</a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                    {{ __('Deconnexion') }}
+                                    Deconnexion
                                 </a>
 
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
+
                             </div>
                         </li>
                         @endguest
@@ -84,7 +96,10 @@
         <main class="py-4">
             @yield('content')
         </main>
+
+        @include('layouts.footer')
     </div>
+
 
     <style>
         body {
@@ -102,8 +117,8 @@
         }
 
         #tech {
-            width: 150px;
-            height: 35px;
+            width: 125px;
+            height: 40px;
             border: none;
             color: white;
             background-color: rgba(43, 85, 205, 1);
@@ -121,6 +136,9 @@
 
         }
     </style>
+
+
+
 </body>
 
 </html>

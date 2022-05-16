@@ -18,5 +18,9 @@ Route::get('/', function () {
 });
 
 Route::get('/formulaire-technicien', function () {
-    return view('dashboard.formulaire');
+    return view('dashboard.overview');
+});
+
+Route::get('/formulaire-technicien-notification', function () {
+    return view('dashboard.notification');
 });

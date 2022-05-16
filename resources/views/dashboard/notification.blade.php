@@ -2,31 +2,6 @@
 @section('composant-dashboard')
 
 <div class="dash-content">
-    <div class="overview">
-        <div class="title">
-            <i class="fa-solid fa-gauge-high"></i>
-            <span class="text">Dashboard</span>
-        </div>
-
-        <div class="boxes">
-            <div class="box box1">
-                <i class="fa-solid fa-thumbs-up"></i>
-                <span class="text">Total Likes</span>
-                <span class="number">50,120</span>
-            </div>
-            <div class="box box2">
-                <i class="fa-solid fa-comments"></i>
-                <span class="text">Comments</span>
-                <span class="number">20,120</span>
-            </div>
-            <div class="box box3">
-                <i class="fa-solid fa-share"></i>
-                <span class="text">Total Share</span>
-                <span class="number">10,120</span>
-            </div>
-        </div>
-    </div>
-
     <div class="activity">
         <div class="title">
             <i class="fa-solid fa-clock"></i>
@@ -92,6 +67,5 @@
         </div>
     </div>
 </div>
-</section>
 
 @endsection
