@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <!-- FONT-AWESOME -->
     <script src="https://kit.fontawesome.com/26a1275860.js" crossorigin="anonymous"></script>
@@ -29,12 +28,12 @@
 
         <div class="menu-items">
             <ul class="nav-links">
-                <li><a href="/formulaire-technicien">
+                <li><a href="{{route('admin.users.index')}}">
                         <i class="fa-solid fa-house-chimney"></i>
                         <span class="link-name">Dashboard</span>
                     </a></li>
 
-                <li><a href="/formulaire-technicien-notification">
+                <li><a href="{{route('admin.users.notification')}}">
                         <i class="fa-solid fa-envelope"></i>
                         <span class="link-name">Notification</span>
                     </a></li>
@@ -70,12 +69,21 @@
 
 
             <ul class="top-line">
-                <li><a href="#"><img src="{{ url("images/photo-admin-1.jpg") }}" alt="Photo de profil"></a></li>
 
-                <li style="padding-top: 10px"><a href="#">
+
+                <li style="padding-top: 10px">
+
+
+                    <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                         <i class="fa-solid fa-right-from-bracket"></i>
                         <span class="link-name">Logout</span>
-                    </a></li>
+                    </a>
+
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                    </form>
+                </li>
 
                 {{-- <li class="mode">
                     <a href="#">
@@ -108,11 +116,11 @@
                         <span class="link-name">Dark Mode</span> MODIFIER LE CSS 
                         ####################################################################
                     </a> --}}
-                        {{-- <i class="fa-solid fa-moon"></i> ############################   ICON LUNE DARK MODE--}} 
+                    {{-- <i class="fa-solid fa-moon"></i> ############################   ICON LUNE DARK MODE--}}
 
-                        <div class="mode-toggle"> 
-                            <span class="switch"></span>
-                        </div>
+                    <div class="mode-toggle">
+                        <span class="switch"></span>
+                    </div>
 
                 </li>
             </ul>
@@ -120,17 +128,16 @@
             {{-- <img src="{{ url("images/0.jpg") }}" alt="Photo de profil"> --}}
         </div>
 
-        
 
-    @yield('composant-dashboard')
 
-    <!-- Bootstrap 5 lien JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-    </script>
+        @yield('composant-dashboard')
 
-    <!-- dashmain.js -->
-    <script src="{{ url('javascript/dashmain.js') }}"></script>
+        <!-- Bootstrap 5 lien JS -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+
+        <!-- dashmain.js -->
+        <script src="{{ url('javascript/dashmain.js') }}"></script>
 </body>
 
 </html>

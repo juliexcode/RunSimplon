@@ -28,17 +28,12 @@ Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')-
     Route::resource('users', 'UsersController');
     Route::post('users', 'UsersController@entReg')->name('entreprise.log');
     Route::post('users', 'UsersController@store')->name('users.store');
-
     Route::get('users', 'UsersController@index')->name('users.index');
+
+
+    Route::get('users/notification', function () {
+        return view('dashboard.notification');
+    })->name('users.notification');
 });
 
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
-
-
-Route::get('/formulaire-technicien', function () {
-    return view('dashboard.overview');
-});
-
-Route::get('/formulaire-technicien-notification', function () {
-    return view('dashboard.notification');
-});
