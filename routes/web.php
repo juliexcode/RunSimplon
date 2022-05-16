@@ -17,6 +17,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')->group(function () {
+    Route::resource('users', 'UsersController');
+    Route::post('users', 'UsersController@entReg')->name('entreprise.log');
+    Route::get('users', 'UsersController@index')->name('users.index');
+});
+
+Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
+
+
 Route::get('/formulaire-technicien', function () {
     return view('dashboard.overview');
 });
@@ -24,3 +39,7 @@ Route::get('/formulaire-technicien', function () {
 Route::get('/formulaire-technicien-notification', function () {
     return view('dashboard.notification');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
