@@ -27,6 +27,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')->group(function () {
     Route::resource('users', 'UsersController');
     Route::post('users', 'UsersController@entReg')->name('entreprise.log');
+    Route::post('users', 'UsersController@store')->name('users.store');
+
     Route::get('users', 'UsersController@index')->name('users.index');
 });
 
