@@ -2,7 +2,7 @@
 
 @section('content')
 
-<img class="banniere" src="images/unknown.png"></img>
+<img class="banniere" src="images/ban.png"></img>
 <div class="container">
 
 </div>
@@ -14,38 +14,49 @@
 
 </div>
 
-<div class="container" style="display: inline-block;">
+<div class="container d-flex justify-content-center" style="display: inline-block;">
 
-    <!-- <div class="row flex-align-item-center">
- 
-            <div class="col-lg-6">
-                <img id="pneu" src="images/pneuGonflage.jpg" class="img-fluid" alt="Responsive image">
-            </div>
- 
- 
-            <div class="col-lg-3 ">
-                <p class="press">Pourquoi vérifiez la pression des ses pneus est important ?</p>
-            </div>
-  -->
-
-
-    <div class="row">
-        <div id="grid" class="col-md-4 ">
-            <div class="imgAbt d-flex justify-content-center">
-                <img width="220" height="220" src="images/pneuGonflage.jpg" />
+    <div id="ensemb" class="row">
+        <div id="grid" class="col-sm-4">
+            <div class="">
+                <img class="image1" width="262" height="298" src="images/pneuGonflage.jpg" />
             </div>
         </div>
-        <div class="col-md-8">
+        <div class="col-sm-8 ">
             <h4 class="til">Pourquoi TuMeGonfles ?</h4>
-            <p class="para">Lots of text here...With the four tiers of grids available you're bound to run into issues where, at certain breakpoints, your columns don't clear quite right as one is taller than the other. To fix that, use a combination of a .clearfix and o</p>
+            <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum condimentum porttitor porttitor volutpat ultricies vitae elementum. Mauris aliquam lobortis tempor, nulla. Ac consequat quis pellentesque sapien in duis proin. Sapien </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                <button id="btn1" type="button" class="btn  ">Comment fonctionne le site ?</button>
+                <button id="btn2" type="button" class="btn ">Entreprises, inscrivez-vous !</button>
+            </div>
+
         </div>
+
+    </div>
+</div>
+<div class="container d-flex justify-content-center" style="display: inline-block;">
+
+    <div id="ensemb" class="row">
+        <div class="col-sm-8  ">
+            <h4 class="til">Pourquoi vérifiez la pression des ses pneus est important ?</h4>
+            <button id="btn1" type="button" class="btn float-right ">Cliquez ici pour en savoir PLUS !</button>
+
+
+        </div>
+        <div id="gauche" class="col-sm-4">
+
+            <img class=image2 width="501" height="298" src="images/pneuPlat.jpg" />
+
+        </div>
+
+
     </div>
 </div>
 
 
 </div>
 
-</div>
+
 
 
 
@@ -68,7 +79,9 @@
         color: #2B55CD;
         text-align: center;
         margin-top: 10px;
-        font-size: 86px;
+        font-size: 36px;
+        font-family: 'Gluten', cursive;
+
 
 
     }
@@ -91,12 +104,48 @@
     }
 
     .til {
-        text-align: center;
+
         font-size: 36px;
+
     }
 
     .para {
-        text-align: center;
+
         font-size: 24px;
+
+
+    }
+
+    #ensemb {
+        margin-top: 100px;
+    }
+
+    #ensemb h4 {
+        text-align: center;
+    }
+
+
+
+    .image2 {
+        float: left;
+    }
+
+
+
+    #btn1 {
+        color: white;
+        background-color: #2B55CD;
+        font-family: 'Gluten', cursive;
+
+
+    }
+
+    #btn2 {
+        color: white;
+        background-color: #2B55CD;
+        font-family: 'Gluten', cursive;
+        margin-left: 70px;
+        border-radius: 10px;
+
     }
 </style>
