@@ -25,15 +25,19 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')->group(function () {
-    Route::resource('users', 'UsersController');
     Route::post('users/entreprise', 'UsersController@entReg')->name('entreprise.log');
     Route::post('users', 'UsersController@store')->name('users.store');
     Route::get('users', 'UsersController@index')->name('users.index');
+    Route::get('users/create', 'UsersController@create')->name('users.create');
+    Route::get('users/dashboard', 'UsersController@dash')->name('users.dash.view');
+    Route::get('users/dashboard/listeb', 'UsersController@listutil')->name('users.dash.listutil');
+    Route::delete('users/dashboard/listeb/{user}', 'UsersController@delben')->name('users.dash.listutil.destroy');
 
 
-    Route::get('users/notification', function () {
+
+    Route::get('users/dashboard/notification', function () {
         return view('dashboard.notification');
-    })->name('users.notification');
+    })->name('users.dash.notification');
 });
 
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');

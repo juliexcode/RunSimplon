@@ -21,8 +21,21 @@ class UsersController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('dashboard.overview')->with('users', $users);
+        return view('dashboard.listutilisateur')->with('users', $users);
     }
+
+    public function dash()
+    {
+
+        return view('dashboard.overview');
+    }
+
+    public function listutil()
+    {
+        $users = User::all();
+        return view('dashboard.listutilisateur')->with('users', $users);
+    }
+
 
     /**
      * Show the form for creating a new resource.
