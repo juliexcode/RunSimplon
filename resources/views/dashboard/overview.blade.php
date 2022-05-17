@@ -92,13 +92,7 @@
         </div>
     </div>
 
-    @foreach($users as $user)
-    <div>
 
-        {{$user->name}} - {{$user->prenom}}
-
-    </div>
-    @endforeach
 
     <!-- Button trigger modal -->
     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
