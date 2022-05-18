@@ -34,6 +34,7 @@ Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')-
     Route::delete('users/dashboard/listeb/{user}', 'UsersController@delben')->name('users.dash.listutil.destroy');
     Route::get('users/dashboard/listeb/{user}/edit', 'UsersController@editrole')->name('users.dash.listutil.edit');
     Route::put('users/dashboard/listeb/{user}', 'UsersController@assrole')->name('users.dash.listutil.update');
+    Route::get('users/dashboard/listetech', 'UsersController@listtech')->name('users.dash.listtech');
 
 
 
@@ -48,4 +49,3 @@ Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'
 
 
 Route::get('/pressionpneu', [App\Http\Controllers\PressionController::class, 'pressionpneu'])->name('pressionpneu');
-
