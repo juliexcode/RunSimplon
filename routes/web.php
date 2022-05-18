@@ -49,3 +49,8 @@ Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'
 
 
 Route::get('/pressionpneu', [App\Http\Controllers\PressionController::class, 'pressionpneu'])->name('pressionpneu');
+
+Route::get('/commentfonctionne', function () {
+    return view('commentfonctionne');
+    
+})->name('commentfonctionne');
