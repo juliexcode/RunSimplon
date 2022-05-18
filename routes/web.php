@@ -32,6 +32,8 @@ Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')-
     Route::get('users/dashboard', 'UsersController@dash')->name('users.dash.view');
     Route::get('users/dashboard/listeb', 'UsersController@listutil')->name('users.dash.listutil');
     Route::delete('users/dashboard/listeb/{user}', 'UsersController@delben')->name('users.dash.listutil.destroy');
+    Route::get('users/dashboard/listeb/{user}/edit', 'UsersController@editrole')->name('users.dash.listutil.edit');
+    Route::put('users/dashboard/listeb/{user}', 'UsersController@assrole')->name('users.dash.listutil.update');
 
 
 
