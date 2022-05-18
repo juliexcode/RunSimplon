@@ -1,12 +1,16 @@
 <div class="footer">
-  <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-success ">
-    <div class="container text-center">
-      <img id="imag" class="navbar-logo " src="images/logo.png"></img>
-      <a href="contact" class="contact">Nous contactez</a>
+  <footer id="foot" class="">
+    <div class="d-flex justify-content-between  ">
+      <img id="imag" class="navbar-logo d-flex align-items-center ms-4 " src="images/logo.png"></img>
+      <a href="contact" id="contact" class="d-flex  align-items-center me-5 ">Nous contactez</a>
 
     </div>
 </div>
-<p>2022-RunSimplon , fait par BEGUE Thomas, LOUIS Quentin, PERIANMODELY Julie, SUBIRATS Yannick et TURPIN Allan <img id="imag" class="navbar-logo " src="images/unknown.png"></img></p>
+<div></div>
+<div class="d-flex justify-content-center">
+    <p class="footext me-5">2022-RunSimplon , fait par BEGUE Thomas, LOUIS Quentin, PERIANMODELY Julie, SUBIRATS Yannick et TURPIN Allan </p>
+
+</div>
 
 
 
@@ -16,11 +20,25 @@
 </footer>
 
 <style>
-
-  .contact{
+  #contact {
     color: blue;
     text-decoration: none;
   }
 
-  
+  #imag {
+    float: left;
+  }
+
+  #foot {
+    background-color: rgba(209, 255, 143, 1);
+    min-height: 4rem;
+  }
+
+
+
+  .logofoot {
+    height: 37px;
+    width: 87px;
+    float: right;
+  }
 </style>
