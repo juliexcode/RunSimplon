@@ -37,9 +37,15 @@ Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')-
 
 
 
+
+
     Route::get('users/dashboard/notification', function () {
         return view('dashboard.notification');
     })->name('users.dash.notification');
 });
 
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');
+
+
+Route::get('/pressionpneu', [App\Http\Controllers\PressionController::class, 'pressionpneu'])->name('pressionpneu');
+

@@ -38,7 +38,7 @@
     <div id="ensemb" class="d-flex flex-row justify-content-between mx-5 px-5">
         <div class="d-flex flex-column justify-content-center">
             <h4 class="til  ">Pourquoi vérifiez la pression des ses pneus est important ?</h4>
-            <button id="btn3" type=" button" class="container btn text-nowrap mt-4 ">Cliquez ici pour en savoir PLUS !</button>
+            <a href="pressionpneu"><button id="btn3" type=" button" class="container btn text-nowrap mt-4 ">Cliquez ici pour en savoir PLUS !</button></a>
         </div>
         <div id="gauche" class="col-sm-4">
             <img class="image2" width="400" height="298" src="images/pneuPlat.jpg" />
