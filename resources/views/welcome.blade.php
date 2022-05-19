@@ -28,10 +28,10 @@
         </div>
         <div class="col-sm-8 ">
             <h4 class="til">Pourquoi TuMeGonfles ?</h4>
-            <p class="para">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ipsum condimentum porttitor porttitor volutpat ultricies vitae elementum. Mauris aliquam lobortis tempor, nulla. Ac consequat quis pellentesque sapien in duis proin. Sapien </p>
-            <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                <button id="btn1" type="button" class="btn  ">Comment fonctionne le site ?</button>
-                <button id="btn2" type="button" class="btn ">Entreprises, inscrivez-vous !</button>
+            <p class="para">TuMeGonfles?! est un prestataire de service pour entreprise, celle-ci permet de faire une vérification rapide de l’état des pneus et des balais essuie-glaces des véhicules de vos employés. Et permet à vos employés de faire des économies ! </p>
+            <div class="d-grid gap-2 d-md-flex justify-content-md-center">
+                <a href="commentfonctionne"><button id="btn1" type="button" class="container btn text-nowrap ">Comment fonctionne le site ?</button></a>
+                <a href=""><button id="btn2" type="button" class="btn ">Entreprises, inscrivez-vous !</button></a>
             </div>
 
         </div>
@@ -39,15 +39,15 @@
     </div>
 </div>
 <!-- <div class="d-flex justify-content-center" style="display: inline-block;"> -->
-    <div id="ensemb" class="d-flex flex-row justify-content-between mx-5 px-5">
-        <div class="d-flex flex-column justify-content-center">
-            <h4 class="til  ">Pourquoi vérifiez la pression des ses pneus est important ?</h4>
-            <a href="pressionpneu"><button id="btn3" type=" button" class="container btn text-nowrap mt-4 ">Cliquez ici pour en savoir PLUS !</button></a>
-        </div>
-        <div id="gauche" class="col-sm-4">
-            <img class="image2" width="400" height="298" src="images/pneuPlat.jpg" />
-        </div>
+<div id="ensemb" class="d-flex flex-row justify-content-between mx-5 px-5">
+    <div class="d-flex flex-column justify-content-center">
+        <h4 class="til  ">Pourquoi vérifiez la pression des ses pneus est important ?</h4>
+        <a href="pressionpneu"><button id="btn3" type=" button" class="container btn text-nowrap mt-4 ">Cliquez ici pour en savoir PLUS !</button></a>
     </div>
+    <div id="gauche" class="col-sm-4">
+        <img class="image2" width="400" height="298" src="images/pneuPlat.jpg" />
+    </div>
+</div>
 <!-- </div> -->
 
 
@@ -142,7 +142,7 @@
         color: white;
         background-color: #2B55CD;
         font-family: 'Gluten', cursive;
-        width: 50%;
+        width: 100%;
         border-radius: 10px;
 
 
@@ -153,11 +153,12 @@
         color: white;
         background-color: #2B55CD;
         font-family: 'Gluten', cursive;
-        width: 50%;
+        width: 100%;
         border-radius: 10px;
 
     }
-    #btn3{
+
+    #btn3 {
         color: white;
         background-color: #2B55CD;
         font-family: 'Gluten', cursive;
@@ -165,27 +166,29 @@
         border-radius: 10px;
     }
 
-.cerclefond{
-position: absolute; z-index: -1;
-width: 1923px;
-height: 980px;
-left: -428.61px;
-top: 394.57px;
-border-radius: 50%;
+    .cerclefond {
+        position: absolute;
+        z-index: -1;
+        width: 1923px;
+        height: 980px;
+        left: -428.61px;
+        top: 394.57px;
+        border-radius: 50%;
 
-background: #EAEAEA;
-}
-.cerclefond1{
-    position: absolute; z-index: -1;
-width: 1127px;
-height: 840px;
-left: 168px;
-top: -137px;
-border-radius: 50%;
+        background: #EAEAEA;
+    }
 
-background: #FFFFFF;
+    .cerclefond1 {
+        position: absolute;
+        z-index: -1;
+        width: 1127px;
+        height: 840px;
+        left: 168px;
+        top: -137px;
+        border-radius: 50%;
+
+        background: #FFFFFF;
 
 
-}
-
+    }
 </style>
