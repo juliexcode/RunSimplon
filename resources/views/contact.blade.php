@@ -9,6 +9,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="cerclefond"></div>
+<div class="cerclefond1"></div>
 
 @extends('layouts.app')
 
@@ -17,15 +19,16 @@
 <section class="mb-4">
 
 <!--Section heading-->
-<h2 class="h1-responsive font-weight-bold text-center my-4">Contact us</h2>
+<h2 class="accroch">N’hésitez-pas, écrivez-nous !</h2>
 <!--Section description-->
-<p class="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly. Our team will come back to you within
-    a matter of hours to help you.</p>
+<p class="text-center w-responsive mx-auto mb-5">Des questions ? Un avis ? N'hésitez pas écrivez-nous! Notre équipe vous répondra dans les plus bref délais. Merci!</p>
 
-<div class="row">
+
+
+<div class="row justify-content-center px-5">
 
     <!--Grid column-->
-    <div class="col-md-9 mb-md-0 mb-5">
+    <div class="col-md-9 mb-md-0 mb-5 center px-5">
         <form id="contact-form" name="contact-form" action="mail.php" method="POST">
 
             <!--Grid row-->
@@ -34,8 +37,8 @@
                 <!--Grid column-->
                 <div class="col-md-6">
                     <div class="md-form mb-0">
-                        <input type="text" id="name" name="name" class="form-control">
-                        <label for="name" class="">Your name</label>
+                        <label for="name" class="">Votre Nom</label>
+                        <input type="text" id="name" name="name" class="form-control border-2 border-primary rounded">
                     </div>
                 </div>
                 <!--Grid column-->
@@ -43,8 +46,9 @@
                 <!--Grid column-->
                 <div class="col-md-6">
                     <div class="md-form mb-0">
-                        <input type="text" id="email" name="email" class="form-control">
-                        <label for="email" class="">Your email</label>
+                        <label for="email" class="">Votre email</label>
+                        <input type="text" id="email" name="email" class="form-control border-2 border-primary rounded">
+                        
                     </div>
                 </div>
                 <!--Grid column-->
@@ -53,11 +57,12 @@
             <!--Grid row-->
 
             <!--Grid row-->
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-md-12">
                     <div class="md-form mb-0">
-                        <input type="text" id="subject" name="subject" class="form-control">
-                        <label for="subject" class="">Subject</label>
+                        <label for="subject" class="">Sujet</label>
+                        <input type="text" id="subject" name="subject" class="form-control border-2 border-primary rounded">
+                        
                     </div>
                 </div>
             </div>
@@ -67,48 +72,101 @@
             <div class="row">
 
                 <!--Grid column-->
-                <div class="col-md-12">
+                <div class="col-md-12 mt-3">
 
                     <div class="md-form">
-                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
-                        <label for="message">Your message</label>
+                        <label for="message">Votre message</label>
+                        <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea border-2 border-primary rounded"></textarea>
+                        
                     </div>
 
                 </div>
             </div>
             <!--Grid row-->
 
+            {{-- <div style="display:flex;justify-content: center;margin-top: 30px;"> --}}
+            <div class="row justify-content-center mt-3">
+                <button type="submit" class="button" style="width: 190px;">Envoyer!</button>
+            </div>
         </form>
-
-        <div class="text-center text-md-left">
-            <a class="btn btn-primary" onclick="document.getElementById('contact-form').submit();">Send</a>
-        </div>
-        <div class="status"></div>
-    </div>
-    <!--Grid column-->
-
-    <!--Grid column-->
-    <div class="col-md-3 text-center">
-        <ul class="list-unstyled mb-0">
-            <li><i class="fas fa-map-marker-alt fa-2x"></i>
-                <p>San Francisco, CA 94126, USA</p>
-            </li>
-
-            <li><i class="fas fa-phone mt-4 fa-2x"></i>
-                <p>+ 01 234 567 89</p>
-            </li>
-
-            <li><i class="fas fa-envelope mt-4 fa-2x"></i>
-                <p>contact@mdbootstrap.com</p>
-            </li>
-        </ul>
-    </div>
-    <!--Grid column-->
-
 </div>
+</div>
+
+
+       
+        <div class="status"></div>
+    
+    <!--Grid column-->
+   
+
+
 
 </section>
 <!--Section: Contact v.2-->
 @endsection
 </body>
 </html>
+
+
+<style>
+  
+
+    .accroch {
+        color: #2B55CD;
+        text-align: center;
+        margin-top: 10px;
+        font-size: 36px;
+        font-family: 'Gluten', cursive;
+
+    }
+
+.cerclefond{
+    position: absolute; z-index: -1;
+    width: 1923px;
+    height: 780px;
+    left: -428.61px;
+    top: -100px;
+    border-radius: 50%;
+
+    background: #EAEAEA;
+}
+
+.cerclefond1{
+    position: absolute; z-index: -1;
+    width: 1127px;
+    height: 640px;
+    left: 168px;
+    top: -400px;
+    border-radius: 50%;
+
+    background: #FFFFFF;
+}
+
+.button{
+    width: 190px;
+    height: 50px;
+    background-color: #2B55CD;
+    border-radius: 10px;
+    border-width: 0px;
+
+    text-align: center;
+    font-family: 'Gluten';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 21px;
+    vertical-align: baseline;
+    padding-top: 15px; 
+    padding-bottom: 15px; 
+
+    color: #FFFFFF;
+}
+
+.button:hover{
+    width: 190px;
+    height: 50px;
+    background-color: #81CC16;
+    color: #FFFFFF;
+}
+
+</style>
