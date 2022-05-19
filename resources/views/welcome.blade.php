@@ -1,12 +1,16 @@
+<div class="cerclefond"></div>
+<div class="cerclefond1"></div>
+
 @extends('layouts.app')
 
 @section('content')
 
-<img class="banniere" src="images/ban.png"></img>
+<img class="banniere" src="images/ban1.png"></img>
 <div class="container">
 
 </div>
 <br>
+
 <div class="main">
     <h5 class="accroch">Ne vous préoccupez plus de vos pneus, TuMeGonfles est là pour vous !</h5>
 
@@ -14,7 +18,7 @@
 
 </div>
 
-<div class="container d-flex justify-content-center" style="display: inline-block;">
+<div class="container d-flex justify-content-center mt-1" style="display: inline-block;">
 
     <div id="ensemb" class="row">
         <div id="grid" class="col-sm-4">
@@ -160,4 +164,28 @@
         width: 50%;
         border-radius: 10px;
     }
+
+.cerclefond{
+position: absolute; z-index: -1;
+width: 1923px;
+height: 980px;
+left: -428.61px;
+top: 394.57px;
+border-radius: 50%;
+
+background: #EAEAEA;
+}
+.cerclefond1{
+    position: absolute; z-index: -1;
+width: 1127px;
+height: 840px;
+left: 168px;
+top: -137px;
+border-radius: 50%;
+
+background: #FFFFFF;
+
+
+}
+
 </style>
