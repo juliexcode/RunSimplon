@@ -4,7 +4,7 @@
     <div class="list">
         <div class="title">
             <i class="fa-solid fa-address-book"></i>
-            <span class="text">Liste des bénéficiaires</span>
+            <span class="text">Liste des techniciens</span>
         </div>
 
         <table class="table table-borderless table-hover">
@@ -12,22 +12,22 @@
                 <tr>
                     <th scope="col" style="color:black">NOM</th>
                     <th scope="col">PRENOM</th>
-                    <th scope="col">E-MAIL</th>
-                    <th scope="col">ROLE</th>
-                    <th scope="col"></th>
+                    <th scope="col">telephone</th>
+
+                    <th scope="col"> </th>
 
                 </tr>
             </thead>
-            @foreach($users as $user)
+            @foreach($techs as $tech)
             <tbody>
                 <tr>
-                    <td>{{$user->prenom}}</td>
-                    <td>{{$user->name}}</td>
-                    <td>{{$user->email}}</td>
-                    <td>{{ implode(", ", $user->roles()->get()->pluck('name')->toArray())}}</td>
-                    <td> <a href="{{route('admin.users.dash.listutil.edit',$user->id)}}"><button>MODIFIER</button></a>
+                    <td>{{$tech->prenom}}</td>
+                    <td>{{$tech->name}}</td>
+                    <td>{{$tech->email}}</td>
 
-                        <form action="{{route('admin.users.dash.listutil.destroy', $user->id)}}" method="post">
+                    <td> <a href="#"><button>MODIFIER</button></a>
+
+                        <form action="#" method="post">
                             @csrf
                             @method('DELETE')
                             <button type="submit">supprimer</button>
