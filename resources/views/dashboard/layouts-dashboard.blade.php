@@ -49,7 +49,7 @@
                         <span class="link-name">Liste des entreprises</span>
                     </a></li>
 
-                <li><a href="#">
+                <li><a href="{{route('admin.users.dash.listtech')}}">
                         <i class="fa-solid fa-people-roof"></i>
                         <span class="link-name">Liste des technniciens</span>
                     </a></li>

@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Role;
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -22,6 +23,15 @@ class UsersController extends Controller
     {
         $users = User::all();
         return view('dashboard.listutilisateur')->with('users', $users);
+    }
+
+    public function listtech()
+    {
+
+        $techs = User::query()
+            ->where('tech', '=', true)
+            ->get();
+        return view('dashboard.listtech')->with('techs', $techs);
     }
 
     public function dash()
@@ -70,8 +80,8 @@ class UsersController extends Controller
         $user->numero = request('numero');
         $user->email = request('email');
         $user->password = hash::make(request('password'));
+        $user->tech = true;
         $user->save();
-
         return redirect()->back();
     }
 
@@ -103,6 +113,10 @@ class UsersController extends Controller
         $user->password = hash::make(request('password'));
         $user->save();
 
+        $role = Role::select('id')->where('name', 'entreprise')->first();
+        $user->roles()->attach($role);
+
+
         return view('auth.login');
     }
 
@@ -124,10 +138,21 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function editrole(User $user)
     {
-        //
+        $role = Role::all();
+        return view('admin.users.index', [
+            'user' => $user,
+            'roles' => $role
+        ]);
     }
+
+    public function assrole(Request $request, User $user)
+    {
+        $user->roles()->sync($request->roles);
+        return redirect()->route('admin.users.dash.listutil');
+    }
+
 
     /**
      * Update the specified resource in storage.
@@ -147,8 +172,11 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function delben(User $user)
     {
-        //
+        $user->roles()->detach();
+        $user->delete();
+
+        return redirect()->route('admin.users.dash.listutil');
     }
 }
