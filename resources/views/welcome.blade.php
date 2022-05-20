@@ -5,14 +5,17 @@
 
 @section('content')
 
+
 <img class="banniere" src="images/ban1.png"></img>
+<h5 class="accroch">Ne vous préoccupez plus de vos pneus, TuMeGonfles est là pour vous !</h5>
+<div style="text-align:center"><a href=""><button  type="button" class="button">Entreprises, inscrivez-vous !</button></a></div>
 <div class="container">
 
 </div>
 <br>
 
 <div class="main">
-    <h5 class="accroch">Ne vous préoccupez plus de vos pneus, TuMeGonfles est là pour vous !</h5>
+ 
 
 
 
@@ -30,8 +33,8 @@
             <h4 class="til">Pourquoi TuMeGonfles ?</h4>
             <p class="para">TuMeGonfles?! est un prestataire de service pour entreprise, celle-ci permet de faire une vérification rapide de l’état des pneus et des balais essuie-glaces des véhicules de vos employés. Et permet à vos employés de faire des économies ! </p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-center">
-                <a href="commentfonctionne"><button id="btn1" type="button" class="container btn text-nowrap ">Comment fonctionne le site ?</button></a>
-                <a href=""><button id="btn2" type="button" class="btn ">Entreprises, inscrivez-vous !</button></a>
+                <a href="commentfonctionne"><button  type="button" class="button">Comment fonctionne TuMeGonfles ?</button></a>
+              
             </div>
 
         </div>
@@ -39,10 +42,11 @@
     </div>
 </div>
 <!-- <div class="d-flex justify-content-center" style="display: inline-block;"> -->
-<div id="ensemb" class="d-flex flex-row justify-content-between mx-5 px-5">
+<div id="ensemb" class="d-flex flex-row justify-content-between mx-5 px-5 mb-4">
     <div class="d-flex flex-column justify-content-center">
-        <h4 class="til  ">Pourquoi vérifiez la pression des ses pneus est important ?</h4>
-        <a href="pressionpneu"><button id="btn3" type=" button" class="container btn text-nowrap mt-4 ">Cliquez ici pour en savoir PLUS !</button></a>
+        <h4  style="text-align:center" class="til  ">Pourquoi vérifiez la pression des ses pneus est important ?</h4>
+        <div style="text-align:center">
+        <a href="pressionpneu"><button  type=" button" class="button">Cliquez ici pour en savoir PLUS !</button></a></div>
     </div>
     <div id="gauche" class="col-sm-4">
         <img class="image2" width="400" height="298" src="images/pneuPlat.jpg" />
@@ -64,20 +68,25 @@
 
 <style>
     .banniere {
+        z-index: -1;
         width: 100%;
         height: auto;
-        margin-top: -25px;
-        margin-bottom: -25px;
+        margin-top: 0;
+        margin-bottom: -200px;
 
 
     }
 
     .accroch {
-        color: #2B55CD;
+        z-index: 1;
+        color: #000000;
         text-align: center;
-        margin-top: 10px;
+        margin-top: 0;
+        margin-bottom:50px; 
         font-size: 36px;
         font-family: 'Gluten', cursive;
+       
+        
 
 
 
@@ -116,7 +125,7 @@
     }
 
     #ensemb {
-        margin-top: 100px;
+        margin-top: 50px;
     }
 
     #ensemb h4 {
@@ -166,7 +175,7 @@
         border-radius: 10px;
     }
 
-    .cerclefond {
+    /* .cerclefond {
         position: absolute;
         z-index: -1;
         width: 1923px;
@@ -190,5 +199,37 @@
         background: #FFFFFF;
 
 
-    }
+    } */
+
+.button{
+    /* margin-left:40%;
+    margin-right: auto; */
+    width: 500px;
+    height: 50px;
+    background-color: #2B55CD;
+    border-radius: 10px;
+    border-width: 0px;
+
+  
+
+    text-align: center;
+    font-family: 'Gluten';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 21px;
+    vertical-align: baseline;
+    padding-top: 15px; 
+    padding-bottom: 15px;
+
+    color: #FFFFFF;
+}
+
+.button:hover{
+    width: 500px;
+    height: 50px;
+    background-color: #81CC16;
+    color: #FFFFFF;
+}
+
 </style>

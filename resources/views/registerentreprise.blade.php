@@ -20,7 +20,7 @@
         position: relative;
         margin-left: auto;
         margin-right: auto;
-        width: 800px;
+        width: 50%;
         height: auto;
         padding: 20px;
         
