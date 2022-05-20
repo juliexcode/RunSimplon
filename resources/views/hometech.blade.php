@@ -10,14 +10,15 @@
 
 <body>
     <div class="container">
-        <?php
 
 
 
-        $email = session('email');
-        echo "<h4 style='background-color:blue'>" . $email . "<h4>";
-        ?>
         <h1>TECHNICIEN</h1>
+        <form class="d-flex" action="{{Route('admin.users.tech.recherche')}}">
+            <input class="form-control me-2" type="search" placeholder="Search" name='q'>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
+
     </div>
 </body>
 

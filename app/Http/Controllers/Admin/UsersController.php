@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -19,12 +18,8 @@ class UsersController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
-        $users = User::all();
-        return view('dashboard.listutilisateur')->with('users', $users);
-    }
 
+    // VOIR LA LISTE DES TECHNICIENS
     public function listtech()
     {
 
@@ -34,15 +29,19 @@ class UsersController extends Controller
         return view('dashboard.listtech')->with('techs', $techs);
     }
 
+    // RETOUNER LA VUE DASHBOARD
     public function dash()
     {
 
         return view('dashboard.overview');
     }
-
+    // VOIR LA LISTE DES BENEFICIAIRE
     public function listutil()
     {
-        $users = User::all();
+        $users = User::query()
+            ->where('benef', '=', true)
+            ->get();
+
         return view('dashboard.listutilisateur')->with('users', $users);
     }
 
@@ -63,6 +62,8 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    //  POUR AJOUTER UN TECHNICIEN
     public function store()
     {
 
@@ -90,7 +91,7 @@ class UsersController extends Controller
     }
 
 
-
+    // POUR L'INSCRIPTION DES ENTREPRISES
     public function entReg()
     {
         request()->validate([
@@ -113,11 +114,20 @@ class UsersController extends Controller
         $user->password = hash::make(request('password'));
         $user->save();
 
-        $role = Role::select('id')->where('name', 'entreprise')->first();
-        $user->roles()->attach($role);
+
 
 
         return view('auth.login');
+    }
+
+    // RECHERCHER UNE MATRICULATION POUR LE TECHNICIEN
+    public function recherche()
+    {
+        $q = request()->input('q');
+
+        $benefs = User::where('matricule', 'like', "%$q%")
+            ->get();
+        return view('recherche')->with('benefs', $benefs);
     }
 
 
@@ -138,20 +148,6 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function editrole(User $user)
-    {
-        $role = Role::all();
-        return view('admin.users.index', [
-            'user' => $user,
-            'roles' => $role
-        ]);
-    }
-
-    public function assrole(Request $request, User $user)
-    {
-        $user->roles()->sync($request->roles);
-        return redirect()->route('admin.users.dash.listutil');
-    }
 
 
     /**
@@ -172,9 +168,10 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
+    // POUR SUPPRIMER 
     public function delben(User $user)
     {
-        $user->roles()->detach();
+
         $user->delete();
 
         return redirect()->route('admin.users.dash.listutil');
