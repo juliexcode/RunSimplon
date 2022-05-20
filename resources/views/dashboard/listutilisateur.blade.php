@@ -13,7 +13,6 @@
                     <th scope="col" style="color:black">NOM</th>
                     <th scope="col">PRENOM</th>
                     <th scope="col">E-MAIL</th>
-                    <th scope="col">ROLE</th>
                     <th scope="col"></th>
 
                 </tr>
@@ -24,8 +23,8 @@
                     <td>{{$user->prenom}}</td>
                     <td>{{$user->name}}</td>
                     <td>{{$user->email}}</td>
-                    <td>{{ implode(", ", $user->roles()->get()->pluck('name')->toArray())}}</td>
-                    <td> <a href="{{route('admin.users.dash.listutil.edit',$user->id)}}"><button>MODIFIER</button></a>
+
+                    <td>
 
                         <form action="{{route('admin.users.dash.listutil.destroy', $user->id)}}" method="post">
                             @csrf
