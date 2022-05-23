@@ -91,34 +91,8 @@ class UsersController extends Controller
     }
 
 
-    // POUR L'INSCRIPTION DES ENTREPRISES
-    public function entReg()
-    {
-        request()->validate([
-            'name' => ['required'],
-            'prenom' => ['required'],
-            'entreprise' => ['required'],
-            'adresse' => ['required'],
-            'numero' => ['required'],
-            'email' => ['required', 'email', 'unique:users'],
-            'password' => ['required', 'min:8'],
-            'confirm' => ['required', 'same:password']
-        ]);
-        $user = new User;
-        $user->name = request('name');
-        $user->prenom = request('prenom');
-        $user->adresse = request('adresse');
-        $user->entreprise = request('entreprise');
-        $user->numero = request('numero');
-        $user->email = request('email');
-        $user->password = hash::make(request('password'));
-        $user->save();
 
 
-
-
-        return view('auth.login');
-    }
 
     // RECHERCHER UNE IMMATRICULE POUR LE TECHNICIEN
     public function recherche()

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\EntrepriseController;
 use App\Http\Controllers\InterventionController;
 
 /*
@@ -26,8 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')->group(function () {
-    // AJOUTER UNE ENTREPRISE
-    Route::post('users/entreprise', 'UsersController@entReg')->name('entreprise.log');
+
     // AJOUTER UN TECHNICIEN
     Route::post('users', 'UsersController@store')->name('users.store');
     // REDIRECTION VERS LA PAGE D'INSCRIPTION DES ENTREPRISE
@@ -66,3 +66,7 @@ Route::get('/hometechnicien', function () {
 
 // REDIRECTION VERS LA PAGE D'INTERVENTION à REMPLIR
 Route::get('users/technicien/recherche/intervention', 'App\Http\Controllers\InterventionController@getIntervention')->name('users.tech.intervention');
+
+
+// AJOUTER UNE ENTREPRISE
+Route::post('entreprise', 'App\Http\Controllers\EntrepriseController@entReg')->name('entreprise.log');
