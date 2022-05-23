@@ -6,13 +6,13 @@ _Pré-requis : PHP 8.0, MySQKL et PhpMyAdmin_
 
 Ouvrir une fenêtre Terminal
 
-####Étape 1 - Installation projet Laravel
+#### Étape 1 - Installation projet Laravel
 
 `composer create-project --prefer-dist laravel/laravel TuMeGonfles`
 
 Puis accéder au dossier ‘TuMeGonfles’
 
-####Étape 2 – Configuration
+#### Étape 2 – Configuration
 
 Ouvrir le fichier "`.env`" dans le dossier ‘TuMegonfles’ et renseigner les champs suivant :
 
@@ -23,28 +23,28 @@ Ouvrir le fichier "`.env`" dans le dossier ‘TuMegonfles’ et renseigner les c
 >5 DB_USERNAME=db user name  
 >6 DB_PASSWORD=db password  
 
-####Étape 3 – Installation Laravel UI
+#### Étape 3 – Installation Laravel UI
 
 Installation du package LARAVEL ui dans votre dossier : 
 
 `composer require laravel/ui`
 
-####Étape 4 – Installation du squelette Bootstrap Auth
+#### Étape 4 – Installation du squelette Bootstrap Auth
 
 Installation du package Bootstrap Auth:
 
 `php artisan ui bootstrap --auth`
 
-####Étape 5 – Installation du Package Npm
+#### Étape 5 – Installation du Package Npm
 
 `npm install`  
 Puis executer npm:  
 `npm run dev`
 
-####Étape 6 – Récupérer les fichiers  
+#### Étape 6 – Récupérer les fichiers  
 Faire un git clone
 
-####Étape 7 – Création de la base de données
+#### Étape 7 – Création de la base de données
 ensuite lancer la commande : 
 `php artisan migrate`
 
