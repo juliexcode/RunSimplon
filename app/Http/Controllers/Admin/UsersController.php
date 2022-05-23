@@ -120,7 +120,7 @@ class UsersController extends Controller
         return view('auth.login');
     }
 
-    // RECHERCHER UNE MATRICULATION POUR LE TECHNICIEN
+    // RECHERCHER UNE IMMATRICULE POUR LE TECHNICIEN
     public function recherche()
     {
         $q = request()->input('q');

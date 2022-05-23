@@ -62,3 +62,6 @@ Route::get('/commentfonctionne', function () {
 Route::get('/hometechnicien', function () {
     return view('hometech');
 })->name('technicien');
+
+// REDIRECTION VERS LA PAGE D'INTERVENTION à REMPLIR
+Route::get('users/technicien/recherche/intervention/', 'UsersController@getIntervention')->name('users.tech.intervention');
