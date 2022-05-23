@@ -27,7 +27,7 @@
         </thead>
         @foreach($benefs as $benef)
         <tbody>
-            <a>
+            <a href="{{route('users.tech.intervention')}}">
                 <tr>
                     <td>{{$benef->prenom}}</td>
                     <td>{{$benef->name}}</td>
