@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InterventionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,4 +65,4 @@ Route::get('/hometechnicien', function () {
 })->name('technicien');
 
 // REDIRECTION VERS LA PAGE D'INTERVENTION à REMPLIR
-Route::get('users/technicien/recherche/intervention/', 'UsersController@getIntervention')->name('users.tech.intervention');
+Route::get('users/technicien/recherche/intervention', 'App\Http\Controllers\InterventionController@getIntervention')->name('users.tech.intervention');
