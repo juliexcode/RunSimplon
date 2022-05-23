@@ -27,17 +27,19 @@
         </thead>
         @foreach($benefs as $benef)
         <tbody>
-            <a href="{{route('users.tech.intervention')}}">
-                <tr>
-                    <td>{{$benef->prenom}}</td>
-                    <td>{{$benef->name}}</td>
-                    <td>{{$benef->matricule}}</td>
 
-                </tr>
-            </a>
+            <tr>
+                <td>{{$benef->prenom}}</td>
+                <td>{{$benef->name}}</td>
+                <td>{{$benef->matricule}}</td>
+
+            </tr>
+
 
         </tbody>
         @endforeach
     </table>
+    <a href="{{route('users.tech.intervention')}}">LIEN </a>
 </div>
+
 @endsection
