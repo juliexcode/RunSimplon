@@ -37,13 +37,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                @guest
-                <button class="btn btn-dark">name user</button>
-                @endguest
-                @auth
-                <button class="btn btn-dark">{{Auth::user()->name}}</button>
-                <button class="btn btn-dark">{{Auth::user()->id}}</button>
-                @endauth
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
@@ -71,7 +65,7 @@
 
 
                         <li class="nav-item">
-                            <a href="{{ route('admin.users.create') }}"> <button id="tech">Inscription</button></a>
+                            <a href="{{ route('admin.users.create') }}"> <button id="tech">Entreprise?</button></a>
                         </li>
 
 
