@@ -8,7 +8,7 @@
 
 <img class="banniere" src="images/ban1.png"></img>
 
-<div style="text-align:center; margin-top:100px"><a href=""><button  type="button" class="button">Entreprises, inscrivez-vous !</button></a></div>
+<div style="text-align:center; margin-top:100px"><a href="{{ route('admin.users.create') }}"><button  type="button" class="button">Entreprises, inscrivez-vous !</button></a></div>
 <div class="container">
 
 </div>
