@@ -5,19 +5,24 @@ namespace App\Http\Controllers\Admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Entreprise;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['entReg', 'create']);;
+        $this->middleware('auth')->except(['entReg', 'create',]);;
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+
+
 
     // VOIR LA LISTE DES TECHNICIENS
     public function listtech()
@@ -86,8 +91,41 @@ class UsersController extends Controller
         return redirect()->back();
     }
 
-    public function inscrit()
+    //  POUR INSCRIR UNE ENTREPRISE
+    public function entReg()
     {
+
+        request()->validate([
+            'name' => ['required'],
+            'prenom' => ['required'],
+            'numero' => ['required'],
+            'adresse' => ['required'],
+            'name_entreprise' => ['required'],
+            'email' => ['required', 'email', 'unique:users'],
+            'password' => ['required', 'min:8'],
+            'confirm' => ['required', 'same:password']
+        ]);
+        $entrepriseUser = new User;
+        $entrepriseUser->name = request('name');
+        $entrepriseUser->prenom = request('prenom');
+        $entrepriseUser->numero = request('numero');
+        $entrepriseUser->adresse = request('adresse');
+        $entrepriseUser->name_entreprise = request('name_entreprise');
+        $entrepriseUser->email = request('email');
+        $entrepriseUser->password = hash::make(request('password'));
+        $entrepriseUser->entreprise = true;
+        $entrepriseUser->save();
+
+        $entreprise = new Entreprise();
+        $entreprise->name = request('name');
+        $entreprise->prenom = request('prenom');
+        $entreprise->numero = request('numero');
+        $entreprise->adresse = request('adresse');
+        $entreprise->name_entreprise = request('name_entreprise');
+        $entreprise->email = request('email');
+        $entreprise->password = hash::make(request('password'));
+        $entreprise->save();
+        return view('auth.login');
     }
 
 

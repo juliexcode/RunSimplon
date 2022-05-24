@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\EntrepriseController;
 use App\Http\Controllers\InterventionController;
 
@@ -21,6 +22,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -69,4 +71,20 @@ Route::get('users/technicien/recherche/intervention', 'App\Http\Controllers\Inte
 
 
 // AJOUTER UNE ENTREPRISE
-Route::post('entreprise', 'App\Http\Controllers\EntrepriseController@entReg')->name('entreprise.log');
+Route::post('entreprise/inscription', 'App\Http\Controllers\Admin\UsersController@entReg')->name('entreprise.log');
+
+// REDIRECTION VERS LA PAGE Ajouter un beneficiaire a une entreprise
+Route::get('entreprise/user', 'App\Http\Controllers\EntrepriseController@getUser')->name('entreprise');
+
+// REDIRECTION VERS LA PAGE RECHERCHE UN EMAIL DE BENEF
+Route::get('entreprise/user/email', 'App\Http\Controllers\EntrepriseController@recherchebenef')->name('entreprise.recherche');
+
+
+// REDIRECTION VERS LA PAGE DE CONNEXION DES ENTREPRISES
+Route::get('entreprise/login', 'App\Http\Controllers\EntrepriseController@loginEntreprise')->name('entreprise.login');
+
+//CONNEXION DES ENTREPRISES
+Route::post('entreprise/login/home', 'App\Http\Controllers\EntrepriseController@loginEntrepriseHome')->name('entreprise.login.home');
+
+// AJOUTER UN BENEF A UNE ENTREPRISE
+Route::get('entreprise/user/ajouter/{benef_id}/{entreprise_id}', 'App\Http\Controllers\EntrepriseController@ajoutbenef')->name('entreprise.lien');

@@ -90,7 +90,7 @@
         <div class="row g-3 mt-2">
             <div class="col">
                 <label for="">Nom de l'entreprise:</label>
-                <input id="entreprise" type="text" placeholder="Nom de l'entreprise..." class="form-control border-2 border-primary rounded " name="entreprise" value="{{ old('entreprise') }}" required autofocus>
+                <input id="entreprise" type="text" placeholder="Nom de l'entreprise..." class="form-control border-2 border-primary rounded " name="name_entreprise" value="{{ old('entreprise') }}" required autofocus>
             </div>
         </div>
         <div class="row g-3 mt-2">

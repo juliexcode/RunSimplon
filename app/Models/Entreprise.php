@@ -4,10 +4,14 @@ namespace App\Models;
 
 use Illuminate\Support\Facades\App;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Auth\Authenticatable as BasicAuthenticatable;
 
-class Entreprise extends Model
+class Entreprise extends Model implements Authenticatable
 {
+    use BasicAuthenticatable;
+
     use HasFactory;
     protected $fillable = [
         'name',
@@ -18,22 +22,11 @@ class Entreprise extends Model
         'email',
         'password',
         'adresse',
-        'entreprise'
+        'name_entreprise'
     ];
 
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
 
-    /**
-     * The attributes that should be cast.
-     *
-     * @var array<string, string>
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
 
     public function users()
     {

@@ -23,7 +23,6 @@ class UsersTableSeeder extends Seeder
         User::create([
             'name' => 'admin',
             'prenom' => 'admin',
-            'numero' => '000001',
             'email' => 'admin@test.com',
             'password' => Hash::make('test1234'),
             'admin' => true
@@ -46,6 +45,17 @@ class UsersTableSeeder extends Seeder
             'email' => 'technicien@test.com',
             'password' => Hash::make('test1234'),
             'tech' => true
+        ]);
+
+        User::create([
+            'name' => 'entreprise',
+            'prenom' => 'entreprise',
+            'numero' => '0693235656',
+            'adresse' => '40 rue village',
+            'name_entreprise' => 'LOL',
+            'email' => 'entreprise@test.com',
+            'password' => Hash::make('test1234'),
+            'entreprise' => true
         ]);
     }
 }
