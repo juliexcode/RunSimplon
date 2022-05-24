@@ -103,7 +103,7 @@
    <div class="" style="width:  50%;display: flex;flex-direction: column;justify-content: center;">
         <p class="til  ">Des pneus légèrement sur-gonflé permettent des économies de carburant significatives. Car un pneu sous-gonflé fera consommer plus de carburant, jusqu’à 10 % supplémentaire, en effet le pneu offrira plus de résistance au roulement et une dégradation non uniforme de celui ci.</p>
         <div class="">
-        <button  type="button" class="button">Entreprises, inscrivez-vous !</button>
+         <a href="{{ route('admin.users.create') }}"><button  type="button" class="button">Entreprises, inscrivez-vous !</button></a>
         </div>
     </div>
     <div id="gauche" class="" style="width: 50%;">
@@ -120,7 +120,7 @@
         </div>
     </div>
     <div  style="width: 75%;">
-        <button  type="button" class="button">Comment fonctionne le site ?</button>
+        <a href="commentfonctionne"> <button  type="button" class="button">Comment fonctionne le site ?</button></a>
         <p class="para mt-3" >Pour résumer, vérifier la pression des pneus régulièrement permet d’économiser jusqu’à 3 semaines d’essence sur 1 an !
 Donc un effet très bénéfique pour le porte-monnaie, mais aussi bénéfique pour l’environnement, conduire avec des pneus bien gonflé permettrait de réduire les émissions de gaz à effet de serre de 1,6 millions de tonnes par an.</p>
        
