@@ -77,10 +77,21 @@
                             </a>
 
                             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                @auth
+                                @if(Auth::user()->admin==true)
                                 <a class="dropdown-item" href="{{route('admin.users.dash.view')}}">Dashboard</a>
+                                @endif
+                                @endauth
+                                @auth
+                                @if(Auth::user()->tech==true)
                                 <a class="dropdown-item" href="{{route('technicien')}}">Technicien</a>
+                                @endif
+                                @endauth
+                                @auth
+                                @if(Auth::user()->entreprise==true)
                                 <a class="dropdown-item" href="{{route('entreprise')}}">Entreprise</a>
-
+                                @endif
+                                @endauth
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     Deconnexion
