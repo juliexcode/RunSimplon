@@ -8,7 +8,7 @@
 
 <img class="banniere" src="images/ban1.png"></img>
 
-<div style="text-align:center; margin-top:100px"><a href=""><button  type="button" class="button">Entreprises, inscrivez-vous !</button></a></div>
+<div style="text-align:center; margin-top:100px"><a href="{{ route('admin.users.create') }}"><button  type="button" class="button">Entreprises, inscrivez-vous !</button></a></div>
 <div class="container">
 
 </div>
@@ -44,7 +44,7 @@
 <!-- <div class="d-flex justify-content-center" style="display: inline-block;"> -->
 <div id="ensemb" class="d-flex flex-row justify-content-between mx-5 px-5 mb-4">
     <div class="d-flex flex-column justify-content-center">
-        <h4  style="text-align:center" class="til  ">Pourquoi vérifiez la pression des ses pneus est important ?</h4>
+        <h3  style="text-align:center" class="til  ">Pourquoi vérifiez la pression des ses pneus est important ?</h3>
         <div style="text-align:center">
         <a href="pressionpneu"><button  type=" button" class="button">Cliquez ici pour en savoir PLUS !</button></a></div>
     </div>

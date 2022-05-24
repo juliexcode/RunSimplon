@@ -1,10 +1,11 @@
 @extends('layouts.app')
 
-
 @section('content')
 
+
 <style>
-    body {
+
+   body {
         background-color: #2B55CD;
     }
 
@@ -67,6 +68,9 @@
         color: #FFFFFF;
     }
 </style>
+
+
+
 
 <div class="cadre" style="margin-top: 30px; margin-bottom:30px">
     <div class="accroch">Entreprise inscrivez-vous !
@@ -137,5 +141,5 @@
 </form>
 
 
-</div>
+
 @endsection

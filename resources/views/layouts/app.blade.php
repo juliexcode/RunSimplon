@@ -57,7 +57,7 @@
                         @endif
                         @if (Route::has('register'))
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('register') }}">Inscription</a>
+                          <a class="nav-link" href="{{ route('register') }}">Inscription Bénéficiaire</a>
                         </li>
 
 
@@ -65,7 +65,7 @@
 
 
                         <li class="nav-item">
-                            <a href="{{ route('admin.users.create') }}"> <button id="tech">Entreprise?</button></a>
+                            <a class="nav-link" href="{{ route('admin.users.create') }}"> Inscription Entreprise</a>
                         </li>
 
 
