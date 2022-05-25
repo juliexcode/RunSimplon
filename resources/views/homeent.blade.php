@@ -20,9 +20,9 @@
     </div>
 
     <div>
-        <table class="table table-borderless table-hover">
+        <table class="table table-borderless table-hover table-bordered">
             <thead>
-                <tr>
+                <tr style="background-color: rgba(129, 204, 22, 1);">
                     <th scope="col" style="color:black">NOM</th>
                     <th scope="col">PRENOM</th>
                     <th scope="col">E-MAIL</th>
