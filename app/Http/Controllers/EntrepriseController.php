@@ -20,17 +20,7 @@ class EntrepriseController extends Controller
     // CONNEXION D'ENTREPRISE
     public function loginEntrepriseHome()
     {
-        // $request->validate([
 
-        //     'email' => 'required',
-        //     'password' => 'required',
-        // ]);
-        // // dd($request);
-        // if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-        //     dd($request);
-        //     $request->session()->regenerate();
-        //     return redirect()->back();
-        // };
 
         request()->validate([
             'email' => 'required',
@@ -73,10 +63,17 @@ class EntrepriseController extends Controller
         $entreprise->save();
     }
 
+    // REDIRECTION VERS LA RECHERCHE DUN BENEFICIARE + LA LISTE DES BEENEFICIARE LIER L'ENTREPRISE
+
     public function getUser()
     {
+        $users = User::query()
+            ->where('entreprise_id', '=', Auth::user()->id)
+            ->get();
 
-        return view('homeent');
+        // dd($users);
+
+        return view('homeent')->with('users', $users);
     }
 
     // RECHERCHER UNE adresse email d'un beneficiaire
@@ -89,13 +86,12 @@ class EntrepriseController extends Controller
 
         // dd(Auth::user()->name_entreprise);
 
-        $idEntreprise = Entreprise::query()
-            ->where('name_entreprise', '=', Auth::user()->name_entreprise)
-            ->get();
-        // dd($idEntreprise);
 
-        return view('ajoutben', ['benefs' => $benefs, 'idEntreprise' => $idEntreprise]);
+        return view('ajoutben', ['benefs' => $benefs]);
     }
+
+
+
 
 
     public function ajoutbenef($benef_id, $entreprise_id)

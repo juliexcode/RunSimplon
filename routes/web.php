@@ -84,7 +84,7 @@ Route::get('users/technicien/recherche/intervention', 'App\Http\Controllers\Inte
 // AJOUTER UNE ENTREPRISE
 Route::post('entreprise/inscription', 'App\Http\Controllers\Admin\UsersController@entReg')->name('entreprise.log');
 
-// REDIRECTION VERS LA PAGE Ajouter un beneficiaire a une entreprise
+// REDIRECTION VERS LA PAGE Ajouter un beneficiaire a une entreprise + LA LISTE DES BENEFICIARE LIER A CELLE CI 
 Route::get('entreprise/user', 'App\Http\Controllers\EntrepriseController@getUser')->name('entreprise');
 
 // REDIRECTION VERS LA PAGE RECHERCHE UN EMAIL DE BENEF
@@ -96,6 +96,8 @@ Route::get('entreprise/login', 'App\Http\Controllers\EntrepriseController@loginE
 
 //CONNEXION DES ENTREPRISES
 Route::post('entreprise/login/home', 'App\Http\Controllers\EntrepriseController@loginEntrepriseHome')->name('entreprise.login.home');
+
+
 
 // AJOUTER UN BENEF A UNE ENTREPRISE
 Route::get('entreprise/user/ajouter/{benef_id}/{entreprise_id}', 'App\Http\Controllers\EntrepriseController@ajoutbenef')->name('entreprise.lien');
