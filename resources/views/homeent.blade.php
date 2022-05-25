@@ -26,7 +26,7 @@
                     <th scope="col" style="color:black">NOM</th>
                     <th scope="col">PRENOM</th>
                     <th scope="col">E-MAIL</th>
-                    <th scope="col"></th>
+                    <th scope="col">supprimer</th>
 
                 </tr>
             </thead>
