@@ -84,8 +84,16 @@
     color: #FFFFFF;
 }
 
+  .fond{
+        background-image:url(images/fond.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        
+    }
+
 </style>
 
+<div class="fond">
 
 @extends('layouts.app')
 
@@ -128,7 +136,7 @@ Une fois que l’entreprise est inscrite, elle peut via son « Espace» ajouter
     </div>
 
 </div>
-
+</div>
 
 @endsection
 

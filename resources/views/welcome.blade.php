@@ -1,14 +1,15 @@
-<div class="cerclefond"></div>
-<div class="cerclefond1"></div>
 
+
+ 
 @extends('layouts.app')
 
 @section('content')
 
-
+<div class="fond">
 <img class="banniere" src="images/ban1.png"></img>
 
 <div style="text-align:center; margin-top:100px"><a href="{{ route('admin.users.create') }}"><button  type="button" class="button">Entreprises, inscrivez-vous !</button></a></div>
+
 <div class="container">
 
 </div>
@@ -54,7 +55,7 @@
 </div>
 <!-- </div> -->
 
-
+</div>
 </div>
 
 
@@ -71,11 +72,20 @@
         z-index: -1;
         width: 100%;
         height: auto;
-        margin-top: 0;
+        margin-top: -25px;
         margin-bottom: -200px;
 
-
     }
+
+    .fond{
+        background-image:url(images/fond.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        
+    }
+
+    
+    
 
     .accroch {
         z-index: 1;

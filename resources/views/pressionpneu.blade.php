@@ -82,12 +82,17 @@
     background-color: #81CC16;
     color: #FFFFFF;
 }
-
+   .fond{
+        background-image:url(images/fond.png);
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        
+    }
 
 
 </style>
 
-
+<div class="fond">
 @extends('layouts.app')
 
 
@@ -130,7 +135,7 @@ Donc un effet très bénéfique pour le porte-monnaie, mais aussi bénéfique po
 </div>
 
 </div>
-
+</div>
 
 
 
