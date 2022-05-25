@@ -32,22 +32,33 @@ Route::namespace('App\Http\Controllers\Admin')->prefix('admin')->name('admin.')-
 
     // AJOUTER UN TECHNICIEN
     Route::post('users', 'UsersController@store')->name('users.store');
+
     // REDIRECTION VERS LA PAGE D'INSCRIPTION DES ENTREPRISE
     Route::get('users/create', 'UsersController@create')->name('users.create');
+
     // REDIRECTION VERS LA DASHBOARD
     Route::get('users/dashboard', 'UsersController@dash')->name('users.dash.view');
+
     // REDIRECTION VERS LA LISTE DES BENEFICIAIRE
     Route::get('users/dashboard/listeb', 'UsersController@listutil')->name('users.dash.listutil');
-    // SUPPRIMER
+
+    // SUPPRIMER UN BENEFICIAIRE
     Route::delete('users/dashboard/listeb/{user}', 'UsersController@delben')->name('users.dash.listutil.destroy');
+
     // REDIRECTION VERS LA LISTE DES TECHNICIENS
     Route::get('users/dashboard/listetech', 'UsersController@listtech')->name('users.dash.listtech');
+
+    // SUPPRIMER UN TECHNICIENS
+    Route::delete('users/dashboard/listtech/{user}', 'UsersController@deltech')->name('users.dash.listtech.destroy');
+
+    // REDIRECTION VERS LA LISTE DES ENTREPRISE
+    Route::get('users/dashboard/listeentreprise', 'UsersController@listent')->name('users.dash.listent');
+
+    // SUPPRIMER UNE ENTREPRISE
+    Route::delete('users/dashboard/listent/{user}', 'UsersController@delent')->name('users.dash.listent.destroy');
+
     // REDIRECTION VERS LA PAGE DES TECHNICIENS + RECHERCHE UNE MATRICULE
     Route::get('users/technicien/recherche/', 'UsersController@recherche')->name('users.tech.recherche');
-    // REDIRECTION VERS LA PAGE DES NOTIFICATION DASHBOARD
-    Route::get('users/dashboard/notification', function () {
-        return view('dashboard.notification');
-    })->name('users.dash.notification');
 });
 // REDIRECTION VERS LA PAGE DE CONTACT
 Route::get('/contact', [App\Http\Controllers\ContactController::class, 'contact'])->name('contact');

@@ -33,18 +33,14 @@
                         <span class="link-name">Dashboard</span>
                     </a></li>
 
-                <li><a href="{{route('admin.users.dash.notification')}}">
-                        <i class="fa-solid fa-envelope"></i>
-                        <span class="link-name">Notification</span>
-                    </a></li>
 
                 <li><a href="{{route('admin.users.dash.listutil')}}">
                         <i class="fa-solid fa-users"></i>
-                        <span class="link-name">Liste des personnes</span>
+                        <span class="link-name">Liste des Bénéficiaires</span>
                     </a></li>
 
 
-                <li><a href="#">
+                <li><a href="{{route('admin.users.dash.listent')}}">
                         <i class="fa-solid fa-building"></i>
                         <span class="link-name">Liste des entreprises</span>
                     </a></li>
