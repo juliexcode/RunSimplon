@@ -17,7 +17,7 @@
                 <th scope="col">E-MAIL</th>
                 <th scope="col">ajouter à mon entreprise</th>
                 <th scope="col">$benef->id</th>
-                <th scope="col">Auth::user()->id</th>
+                <th scope="col">ENTREPRISE ID</th>
 
 
 
@@ -30,9 +30,9 @@
                 <td>{{$benef->prenom}}</td>
                 <td>{{$benef->name}}</td>
                 <td>{{$benef->email}}</td>
-                <td><a href="{{route('entreprise.lien',['benef_id'=>$benef->id, $idEntreprise[0]->id])}}"><button>AJOUTER</button></a></td>
+                <td><a href="{{route('entreprise.lien',['benef_id'=>$benef->id, Auth::user()->id])}}"><button>AJOUTER</button></a></td>
                 <td>{{$benef->id}}</td>
-                <td>{{$idEntreprise[0]->id}}</td>
+                <td>{{ Auth::user()->id}}</td>
 
             </tr>
 
