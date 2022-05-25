@@ -22,7 +22,15 @@ class UsersController extends Controller
      */
 
 
+    // VOIR LA LISTE DES ENTREPRISES
+    public function listent()
+    {
 
+        $entreprises = User::query()
+            ->where('entreprise', '=', true)
+            ->get();
+        return view('dashboard.listent')->with('entreprises', $entreprises);
+    }
 
     // VOIR LA LISTE DES TECHNICIENS
     public function listtech()
@@ -187,5 +195,21 @@ class UsersController extends Controller
         $user->delete();
 
         return redirect()->route('admin.users.dash.listutil');
+    }
+
+    public function deltech(User $user)
+    {
+
+        $user->delete();
+
+        return redirect()->route('admin.users.dash.listtech');
+    }
+
+    public function delent(User $user)
+    {
+
+        $user->delete();
+
+        return redirect()->route('admin.users.dash.listent');
     }
 }

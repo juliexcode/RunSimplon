@@ -4,32 +4,33 @@
     <div class="list">
         <div class="title">
             <i class="fa-solid fa-address-book"></i>
-            <span class="text">Liste des techniciens</span>
+            <span class="text">Liste des entreprises</span>
         </div>
 
         <table class="table table-borderless table-hover">
             <thead>
                 <tr>
-                    <th scope="col" style="color:black">NOM</th>
+                    <th scope="col" style="color:black">NOM DE L'ENTREPRISE</th>
+                    <th scope="col">NOM</th>
                     <th scope="col">PRENOM</th>
-                    <th scope="col">telephone</th>
-
-                    <th scope="col"> </th>
+                    <th scope="col">EMAIL </th>
 
                 </tr>
             </thead>
-            @foreach($techs as $tech)
+            @foreach($entreprises as $entreprise)
             <tbody>
                 <tr>
-                    <td>{{$tech->prenom}}</td>
-                    <td>{{$tech->name}}</td>
-                    <td>{{$tech->email}}</td>
+                    <td>{{$entreprise->name_entreprise}}</td>
+                    <td>{{$entreprise->prenom}}</td>
+                    <td>{{$entreprise->name}}</td>
+                    <td>{{$entreprise->email}}</td>
+
                     <td>
-                        <a href="#"><button>MODIFIER</button></a>
-                        <form action="{{route('admin.users.dash.listtech.destroy', $tech->id)}}" method="post">
+
+                        <form action="{{route('admin.users.dash.listent.destroy', $entreprise->id)}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Retirer</button>
+                            <button type="submit">Retirer l'entreprise</button>
                         </form>
                     </td>
                 </tr>
