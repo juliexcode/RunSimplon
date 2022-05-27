@@ -5,6 +5,14 @@
 ## Adresse projet TuMeGonfles?!
 https://tumegonfles-sprint-08.dwwm-12-2021.simplon.re/
 
+
+## Adresse du Wireflow
+<a href="https://www.figma.com/proto/AiNE1xrBieVfvfxsEOi5Gx/Maquette-TuMeGonfles?node-id=309%3A18&scaling=min-zoom&page-id=255%3A2&starting-point-node-id=309%3A18&show-proto-sidebar=1">Wireflow sur Figma</a>
+
+## Adresse de la maquette
+<a href="https://www.figma.com/proto/AiNE1xrBieVfvfxsEOi5Gx/Maquette-TuMeGonfles?node-id=2%3A2&scaling=min-zoom&page-id=0%3A1&starting-point-node-id=2%3A2&show-proto-sidebar=1">Maquette Figma</a>
+
+
 _Pré-requis : PHP 8.0, MySQKL et PhpMyAdmin_
 
 ## Pour lancer le projet
