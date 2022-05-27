@@ -52,7 +52,7 @@
 
 
                 <li><a href="#">
-                        <i class="fa-solid fa-briefcase"></i>
+                        <i class="fa-solid fa-wrench"></i>
                         <span class="link-name">Interventions</span>
                     </a></li>
 
