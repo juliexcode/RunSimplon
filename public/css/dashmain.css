@@ -26,6 +26,7 @@
     --box1-color: #4DA3FF;
     --box2-color: #FFE6AC;
     --box3-color: #E7D1FC;
+    --box4-color: #81CC16;
     --title-icon-color: #fff;
 
     /* ==== transition ===== */
@@ -45,7 +46,7 @@ body.dark{
     --ul-style-color: #CCC;
     --icon-color: #2B55CD;
     --panel-color: #242526;
-    --text-color: #CCC;
+    --text-color: #DDD;
     --black-light-color: #81CC16;
     --border-color: #4D4C4C;
     --toggle-color: #2B55CD;
@@ -356,7 +357,7 @@ nav .top-line img{
     border-radius: 12px;
     width: calc(100% / 3 - 15px);
     padding: 15px 20px;
-    background-color: var(--box1-color);
+    background-color: var(--box4-color);
     transition: var(--tran-05);
 }
 
@@ -367,7 +368,7 @@ nav .top-line img{
 
 .boxes .box .text{
     white-space: nowrap;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 500;
     color: var(--text-color);
 }
