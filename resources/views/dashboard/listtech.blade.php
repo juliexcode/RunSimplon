@@ -25,11 +25,13 @@
                     <td>{{$tech->name}}</td>
                     <td>{{$tech->email}}</td>
                     <td>
-                        <a href="#"><button>MODIFIER</button></a>
-                        <form action="{{route('admin.users.dash.listtech.destroy', $tech->id)}}" method="post">
+                         <a href="#"><button><i class="fa-solid fa-pen-to-square"></i></button></a></td>
+                        {{-- <a href="#"><button>MODIFIER</button></a> --}}
+                       <td> <form action="{{route('admin.users.dash.listtech.destroy', $tech->id)}}" method="post">
                             @csrf
                             @method('DELETE')
-                            <button type="submit">Retirer</button>
+                            {{-- <button type="submit">Retirer</button> --}}
+                             <button type="submit"><i class="fa-solid fa-trash-can"></i></button>
                         </form>
                     </td>
                 </tr>
